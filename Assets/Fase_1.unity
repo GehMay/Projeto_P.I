@@ -662,6 +662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash
       objectReference: {fileID: 0}
+    - target: {fileID: 9193637515843210916, guid: c38f808bdefab4641963e0d817af44f2, type: 3}
+      propertyPath: tipoLixeira
+      value: Papel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
