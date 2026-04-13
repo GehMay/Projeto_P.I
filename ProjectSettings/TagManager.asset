@@ -6,11 +6,16 @@ TagManager:
   tags:
   - Ground
   - Item
+  - Can
+  - Glass
+  - Organic
+  - Paper
+  - Plastic
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Trash
   - Water
   - UI
   - Item

@@ -1,23 +1,35 @@
 using UnityEngine;
 
-// Gerencia os 5 slots do inventário
+// Gerencia os slots do inventário
 public class Inventory : MonoBehaviour
 {
+    public static Inventory instance; // Singleton
+
     public InventorySlot[] slots = new InventorySlot[7]; // Array com 7 slots
 
-    // Adiciona item ao inventário
-    public void AddItem(Item item)          
+    private void Awake()
     {
-        // Procura slot vazio
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // evita duplicados
+        }
+    }
+
+    // Adiciona item ao inventário
+    public void AddItem(Item item)
+    {
         for (int i = 0; i < slots.Length; i++)
         {
-            // Se o slot não tem ícone ativo → está vazio
-            if (!slots[i].icon.enabled)
+            if (!slots[i].icon.enabled) // slot vazio
             {
-                slots[i].AddItem(item); // Coloca o item no slot
+                slots[i].AddItem(item);
                 return;
             }
         }
-        Debug.Log("Inventário cheio!"); // Se não achar slot vazio
+        Debug.Log("Inventário cheio!");
     }
 }

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1611242065991614568}
   - component: {fileID: 6532616490063497496}
   - component: {fileID: 410843907055041457}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Can
-  m_TagString: Untagged
+  m_TagString: Trash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.88375, y: 0.35, z: -3.29444}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7a2a88eca65398f4c80827318d5ccef7, type: 2}
+  - {fileID: 2100000, guid: 22bbc34c41d4535428a399c803924edb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,7 +107,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -127,5 +127,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrashObject
   item:
     itemName: Can
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 52a2955b4082906459fbc3dc21471419, type: 3}
     amount: 0
