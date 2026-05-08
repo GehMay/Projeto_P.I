@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 410843907055041457}
   m_Layer: 3
   m_Name: Can
-  m_TagString: Trash
+  m_TagString: Can
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

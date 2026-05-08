@@ -7,17 +7,18 @@ namespace Supercyan.FreeSample
     {
         [SerializeField] private List<Transform> m_targets = null; // Lista de alvos possíveis
         private Transform m_currentTarget = null;
-
         private int m_currentIndex = 0;
 
-        public float mouseSensitivityX = 3f; // sensibilidade horizontal
-        public float mouseSensitivityY = 2f; // sensibilidade vertical
-        public float distance = 3f;          // distância da câmera em relação ao alvo
-        public float minY = -30f;            // limite mínimo vertical
-        public float maxY = 60f;             // limite máximo vertical
+        public float mouseSensitivityX = 3f;
+        public float mouseSensitivityY = 2f;
+        public float minY = -30f;
+        public float maxY = 60f;
 
-        private float rotationX = 0f; // acumula rotação horizontal
-        private float rotationY = 0f; // acumula rotação vertical
+        [Header("Offset fixo da câmera em relação ao alvo")]
+        public Vector3 positionOffset = new Vector3(0f, 1.6f, 0f); // altura dos olhos
+
+        private float rotationX = 0f;
+        private float rotationY = 0f;
 
         private void Start()
         {
@@ -29,13 +30,16 @@ namespace Supercyan.FreeSample
                 m_currentIndex = 0;
                 m_currentTarget = m_targets[m_currentIndex];
             }
+
+            // Inicializa a rotação com a rotação atual da câmera
+            rotationX = transform.eulerAngles.y;
+            rotationY = transform.eulerAngles.x;
         }
 
         private void Update()
         {
             if (m_targets.Count == 0) return;
 
-            // Lê movimento do mouse
             float mouseX = Input.GetAxis("Mouse X") * mouseSensitivityX;
             float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivityY;
 
@@ -48,15 +52,11 @@ namespace Supercyan.FreeSample
         {
             if (m_currentTarget == null) return;
 
-            // Calcula rotação da câmera com base no mouse
-            Quaternion rotation = Quaternion.Euler(rotationY, rotationX, 0);
+            // Posição fixa no alvo + offset de altura
+            transform.position = m_currentTarget.position + positionOffset;
 
-            // Define posição da câmera em relação ao alvo
-            Vector3 offset = rotation * new Vector3(0, 0, -distance);
-            transform.position = m_currentTarget.position + offset;
-
-            // Faz a câmera olhar para o alvo
-            transform.LookAt(m_currentTarget.position);
+            // Rotação livre pelo mouse
+            transform.rotation = Quaternion.Euler(rotationY, rotationX, 0);
         }
 
         private void SwitchTarget(int step)
