@@ -11,10 +11,11 @@ public class InventorySlot : MonoBehaviour
     // Add an item to the slot
     public void AddItem(Item newItem)
     {
-        storedItem = newItem; // Save the item reference
-        icon.sprite = newItem.icon; // Show the icon
-        icon.enabled = true; // Enable the image
-        amountText.text = newItem.amount.ToString(); // Show the quantity
+        storedItem = newItem;
+        icon.sprite = newItem.icon;
+        icon.enabled = true;
+        amountText.text = newItem.amount.ToString();
+        Debug.Log("Slot atualizado: " + newItem.itemName + " | Sprite: " + newItem.icon + " | Icon enabled: " + icon.enabled);
     }
 
     // Clear the slot (when the item is removed)

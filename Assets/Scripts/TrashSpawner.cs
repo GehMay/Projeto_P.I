@@ -30,7 +30,11 @@ public class TrashSpawner : MonoBehaviour
 
             // escolhe um lixo aleatório
             GameObject prefab = trashPrefabs[Random.Range(0, trashPrefabs.Length)];
-
+            Debug.Log("Spawnado: " + prefab.name + " | Tag: " + prefab.tag);
+            Collider col = prefab.GetComponentInChildren<Collider>();
+            Debug.Log("Spawnado: " + prefab.name +
+                      " | Tag: " + prefab.tag +
+                      " | Collider: " + (col != null ? col.name : "NENHUM"));
             // instancia no cenário
             Instantiate(prefab, randomPos, Quaternion.identity);
         }

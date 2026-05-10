@@ -11,6 +11,9 @@ TagManager:
   - Organic
   - Paper
   - Plastic
+  - Trash
+  - House
+  - Scene
   layers:
   - Default
   - TransparentFX
@@ -19,7 +22,7 @@ TagManager:
   - Water
   - UI
   - Item
-  - 
+  - Wall
   - 
   - 
   - 
