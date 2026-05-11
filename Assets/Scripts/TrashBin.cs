@@ -3,22 +3,56 @@ using UnityEngine;
 public class TrashBin : MonoBehaviour
 {
     [Header("Tipo aceito pela lixeira")]
-    public string acceptedType; // ← precisa ser public ou [SerializeField]
+    public string acceptedType;
+
+    private bool playerPerto = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        TrashObject trash = other.GetComponent<TrashObject>();
-        if (trash != null)
+        Debug.Log("Trigger ativado por: " + other.name + " | Tag: " + other.tag);
+        if (other.CompareTag("Player"))
         {
-            if (trash.item.itemName == acceptedType)
-            {
-                Debug.Log("Correto: " + trash.item.itemName + " foi jogado na lixeira certa!");
-                Destroy(other.gameObject); // remove o lixo da cena
-            }
-            else
-            {
-                Debug.Log("Errado: " + trash.item.itemName + " não pertence a esta lixeira!");
-            }
+            playerPerto = true;
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerPerto = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (playerPerto && Input.GetKeyDown(KeyCode.F))
+        {
+            TentarJogarLixo();
+        }
+    }
+
+    void TentarJogarLixo()
+    {
+        Item item = Inventory.instance.GetSelectedItem();
+
+        if (item == null)
+        {
+            Debug.Log("Nenhum item selecionado!");
+            return;
+        }
+
+        if (item.itemName == acceptedType)
+        {
+            Debug.Log("Correto! " + item.itemName + " jogado na lixeira certa!");
+            int quantidade = item.amount;
+            Inventory.instance.RemoveSelectedItem();
+            GameManager.instance.LixoDescartado(quantidade);
+        }
+        else
+        {
+            Debug.Log("Errado! " + item.itemName + " não pertence a esta lixeira!");
         }
     }
 }

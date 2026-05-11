@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.49997, y: -26}
-  m_SizeDelta: {x: 73, y: 52}
+  m_AnchoredPosition: {x: 111.5, y: -13.1996}
+  m_SizeDelta: {x: 37, y: 26.3991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5869956396839870218
 CanvasRenderer:
@@ -171,8 +171,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.50002, y: -26}
-  m_SizeDelta: {x: 73, y: 52}
+  m_AnchoredPosition: {x: 111.1, y: -13}
+  m_SizeDelta: {x: 37, y: 26.3991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4031125758433598637
 CanvasRenderer:
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f25976477f3c240ab723b1050bfad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
-  icon: {fileID: 0}
+  icon: {fileID: 8308990063011157386}
   amountText: {fileID: 5733996531808754883}
 --- !u!1 &2224315843879524051
 GameObject:
@@ -399,8 +399,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -521.49994, y: 28}
-  m_SizeDelta: {x: 73, y: 52}
+  m_AnchoredPosition: {x: 111.4, y: -13.1}
+  m_SizeDelta: {x: 37, y: 26.3991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1696164218486988978
 CanvasRenderer:
@@ -591,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f25976477f3c240ab723b1050bfad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
-  icon: {fileID: 0}
+  icon: {fileID: 6770462613073039813}
   amountText: {fileID: 2964070166532230692}
 --- !u!1 &2489756563685558463
 GameObject:
@@ -627,8 +627,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.49991, y: -26.000008}
-  m_SizeDelta: {x: 73, y: 52}
+  m_AnchoredPosition: {x: 111.8, y: -12.9}
+  m_SizeDelta: {x: 37, y: 26.3991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6349491170024959519
 CanvasRenderer:
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f25976477f3c240ab723b1050bfad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
-  icon: {fileID: 0}
+  icon: {fileID: 4302426380233891479}
   amountText: {fileID: 74181770931691696}
 --- !u!1 &3532663988927917444
 GameObject:
@@ -910,7 +910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f25976477f3c240ab723b1050bfad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
-  icon: {fileID: 0}
+  icon: {fileID: 3442496290188538751}
   amountText: {fileID: 4242150851608140175}
 --- !u!1 &4237083966094094659
 GameObject:
@@ -946,8 +946,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.50003, y: -26}
-  m_SizeDelta: {x: 73, y: 52}
+  m_AnchoredPosition: {x: 111.6, y: -14}
+  m_SizeDelta: {x: 37, y: 26.3991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8517158669671768451
 CanvasRenderer:
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f25976477f3c240ab723b1050bfad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
-  icon: {fileID: 0}
+  icon: {fileID: 3612696730289003525}
   amountText: {fileID: 6891219171699168255}
 --- !u!1 &5228368679913198448
 GameObject:
@@ -1174,8 +1174,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.49991, y: -26}
-  m_SizeDelta: {x: 73, y: 52}
+  m_AnchoredPosition: {x: 112.6, y: -12.8}
+  m_SizeDelta: {x: 37, y: 26.3991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6350863673328787003
 CanvasRenderer:
@@ -1311,8 +1311,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.322, y: -17.063}
-  m_SizeDelta: {x: 24.356, y: 17.8736}
+  m_AnchoredPosition: {x: 46.5, y: 26.8}
+  m_SizeDelta: {x: 37, y: 26.3991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7013927200175914548
 CanvasRenderer:
@@ -1503,7 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f25976477f3c240ab723b1050bfad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
-  icon: {fileID: 0}
+  icon: {fileID: 2155390247588234112}
   amountText: {fileID: 2273433553103415522}
 --- !u!1 &6967957345448730905
 GameObject:
@@ -1649,8 +1649,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 13, y: -143}
-  m_SizeDelta: {x: 0, y: -196.4205}
+  m_AnchoredPosition: {x: 4.875061, y: -291}
+  m_SizeDelta: {x: 9.75014, y: -370.3062}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4890236178914172888
 CanvasRenderer:
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 2
   m_StartAxis: 0
-  m_CellSize: {x: 83, y: 73}
+  m_CellSize: {x: 130, y: 80}
   m_Spacing: {x: 60, y: 2}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -1803,5 +1803,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f25976477f3c240ab723b1050bfad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
-  icon: {fileID: 0}
+  icon: {fileID: 8913908252358996209}
   amountText: {fileID: 6871060207158778258}

@@ -19,10 +19,7 @@ public class PlayerPickUpDrop : MonoBehaviour
     void Update()
     {
         // desenha o raio na cena para debug
-        Debug.DrawRay(camContainer.position, camContainer.forward * distanciaMaxima, Color.red);
-
-        // controla rotação vertical da câmera
-        camContainer.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
+        Debug.DrawRay(handPoint.position, Vector3.up * distanciaMaxima, Color.green);
 
         // tecla E para pegar
         if (Input.GetKeyDown(KeyCode.E))
@@ -39,36 +36,28 @@ public class PlayerPickUpDrop : MonoBehaviour
 
     void TentarPegarItem()
     {
-        Ray ray = new Ray(camContainer.position, camContainer.forward);
-        RaycastHit hit;
+        // detecta todos os colliders próximos à mão
+        Collider[] colliders = Physics.OverlapSphere(handPoint.position, distanciaMaxima);
 
-        Debug.Log("Raycast Disparado");
+        Debug.Log("Total de objetos próximos: " + colliders.Length);
 
-        if (Physics.Raycast(ray, out hit, distanciaMaxima))
+        foreach (Collider col in colliders)
         {
-            Debug.Log("Acertou: " + hit.collider.name);
+            Debug.Log("Próximo: " + col.name + " | Tag: " + col.tag);
 
-            // verifica se a tag está na lista de objetos pegáveis
-            if (tagsObjetosSeguraveis.Contains(hit.collider.tag))
+            if (tagsObjetosSeguraveis.Contains(col.tag))
             {
                 Debug.Log("PEGOU ITEM!");
-                PegarItem(hit.collider.gameObject);
+                PegarItem(col.gameObject);
+                return; // pega só um por vez
             }
         }
-        else
-        {
-            Debug.Log("Não acertou nada");
-        }
+
+        Debug.Log("Nenhum item pegável por perto");
     }
 
     void PegarItem(GameObject item)
     {
-        // se já tem um item na mão, destrói
-        if (itemAtual != null)
-        {
-            Destroy(itemAtual);
-        }
-
         // pega referência ao TrashObject para acessar o Item
         TrashObject trash = item.GetComponent<TrashObject>();
         if (trash != null)
@@ -78,15 +67,11 @@ public class PlayerPickUpDrop : MonoBehaviour
             Debug.Log("Adicionado ao inventário: " + trash.item.itemName);
         }
 
-        // instancia uma cópia do objeto na mão
-        itemAtual = Instantiate(item, handPoint);
+        // faz o objeto sumir da cena
+        Destroy(item);
 
-        // reseta posição e rotação para alinhar com a mão
-        itemAtual.transform.localPosition = Vector3.zero;
-        itemAtual.transform.localRotation = Quaternion.identity;
-
-        // desativa o objeto original no chão
-        item.SetActive(false);
+        // limpa referência do item na mão
+        itemAtual = null;
     }
 
     void SoltarItem()
