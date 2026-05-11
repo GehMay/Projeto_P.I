@@ -3,9 +3,11 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public static Inventory instance;
+    public RectTransform selectorImage; // arraste a imagem de seleção aqui no Inspector
 
     public InventorySlot[] slots = new InventorySlot[7];
-    public Transform painelSlots; // arraste o "Panel" aqui no Inspector
+    public Transform painelSlots;
+    public int selectedSlot = 0;  // NOVO
 
     private void Awake()
     {
@@ -22,7 +24,6 @@ public class Inventory : MonoBehaviour
         slots = painelSlots.GetComponentsInChildren<InventorySlot>();
         Debug.Log("Slots encontrados: " + slots.Length);
 
-        // inicializa todos os slots como vazios
         foreach (InventorySlot slot in slots)
         {
             slot.icon.enabled = false;
@@ -30,15 +31,43 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        for (int i = 0; i < 7; i++)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+            {
+                selectedSlot = i;
+                Debug.Log("Slot selecionado: " + (i + 1));
+                MoverSeletor(i);
+            }
+        }
+    }
+
+    void MoverSeletor(int index)
+    {
+        if (selectorImage != null && slots[index] != null)
+        {
+            selectorImage.position = slots[index].GetComponent<RectTransform>().position;
+        }
+    }
+
     public void AddItem(Item item)
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (slots[i] == null)
+            if (slots[i] == null) continue;
+
+            if (slots[i].icon.enabled && slots[i].GetItemName() == item.itemName)
             {
-                Debug.Log("Slot " + i + " está nulo!");
-                continue;
+                slots[i].AddAmount(1);
+                return;
             }
+        }
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i] == null) continue;
 
             if (!slots[i].icon.enabled)
             {
@@ -46,6 +75,24 @@ public class Inventory : MonoBehaviour
                 return;
             }
         }
+
         Debug.Log("Inventário cheio!");
+    }
+
+    public Item GetSelectedItem()  // NOVO
+    {
+        if (slots[selectedSlot] != null && slots[selectedSlot].icon.enabled)
+        {
+            return slots[selectedSlot].GetItem();
+        }
+        return null;
+    }
+
+    public void RemoveSelectedItem()  // NOVO
+    {
+        if (slots[selectedSlot] != null)
+        {
+            slots[selectedSlot].ClearSlot();
+        }
     }
 }

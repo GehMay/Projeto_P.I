@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Rotação com o mouse")]
     public float mouseSensitivity = 2f; // sensibilidade do mouse
-    private float horizontalRotation = 0f;
+    private float horizontalRotation = -90f;
 
     private Rigidbody rb;
     private bool isGrounded;
@@ -25,9 +25,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("W: " + Input.GetAxis("Vertical"));
-        Debug.Log("W pressionado: " + Input.GetKey(KeyCode.W));
-
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();

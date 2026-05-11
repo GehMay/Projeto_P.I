@@ -18,6 +18,17 @@ public class InventorySlot : MonoBehaviour
         Debug.Log("Slot atualizado: " + newItem.itemName + " | Sprite: " + newItem.icon + " | Icon enabled: " + icon.enabled);
     }
 
+    public string GetItemName()
+    {
+        return storedItem != null ? storedItem.itemName : "";
+    }
+
+    public void AddAmount(int value)
+    {
+        storedItem.amount += value;
+        amountText.text = storedItem.amount.ToString();
+    }
+
     // Clear the slot (when the item is removed)
     public void ClearSlot()
     {
@@ -25,5 +36,10 @@ public class InventorySlot : MonoBehaviour
         icon.sprite = null; // Remove icon
         icon.enabled = false; // Disable image
         amountText.text = ""; // Clear quantity text
+    }
+
+    public Item GetItem()
+    {
+        return storedItem;
     }
 }

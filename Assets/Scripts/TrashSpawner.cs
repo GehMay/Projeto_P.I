@@ -1,49 +1,92 @@
 using UnityEngine;
 
+[System.Serializable]
+public class SpawnArea
+{
+    public string nomeComodo;
+    public Vector3 center;
+    public Vector3 size;
+    public int quantidade;
+}
+
 public class TrashSpawner : MonoBehaviour
 {
     [Header("Prefabs dos lixos")]
-    public GameObject[] trashPrefabs; // Papel, Vidro, Plástico, Lata, Orgânico
+    public GameObject[] trashPrefabs;
 
-    [Header("Área de spawn")]
-    public Vector3 areaCenter; // centro do campo
-    public Vector3 areaSize;   // largura, profundidade, altura
+    [Header("Áreas de Spawn")]
+    public SpawnArea[] areas;
 
     [Header("Configuração")]
-    public int trashCount = 20; // quantidade de lixos que vão aparecer
+    public float alturaMaxima = 1.5f;
 
     void Start()
     {
-        SpawnTrash();
-    }
-
-    void SpawnTrash()
-    {
-        for (int i = 0; i < trashCount; i++)
+        foreach (SpawnArea area in areas)
         {
-            // posição aleatória dentro da área
-            Vector3 randomPos = areaCenter + new Vector3(
-                Random.Range(-areaSize.x / 2, areaSize.x / 2),
-                0, // sempre no chão
-                Random.Range(-areaSize.z / 2, areaSize.z / 2)
-            );
-
-            // escolhe um lixo aleatório
-            GameObject prefab = trashPrefabs[Random.Range(0, trashPrefabs.Length)];
-            Debug.Log("Spawnado: " + prefab.name + " | Tag: " + prefab.tag);
-            Collider col = prefab.GetComponentInChildren<Collider>();
-            Debug.Log("Spawnado: " + prefab.name +
-                      " | Tag: " + prefab.tag +
-                      " | Collider: " + (col != null ? col.name : "NENHUM"));
-            // instancia no cenário
-            Instantiate(prefab, randomPos, Quaternion.identity);
+            SpawnTrashNaArea(area);
         }
     }
 
-    // desenha a área no editor para visualizar
+    void SpawnTrashNaArea(SpawnArea area)
+    {
+        int spawnados = 0;
+        int tentativas = 0;
+        int maxTentativas = area.quantidade * 10;
+
+        while (spawnados < area.quantidade && tentativas < maxTentativas)
+        {
+            tentativas++;
+
+            Vector3 randomPos = area.center + new Vector3(
+                Random.Range(-area.size.x / 2, area.size.x / 2),
+                0,
+                Random.Range(-area.size.z / 2, area.size.z / 2)
+            );
+
+            RaycastHit hit;
+            Vector3 rayOrigin = randomPos + Vector3.up * 10f;
+
+            if (Physics.Raycast(rayOrigin, Vector3.down, out hit, 20f))
+            {
+                Debug.Log("Acertou: " + hit.collider.name + " | Tag: " + hit.collider.tag + " | Y: " + hit.point.y);
+                if (hit.point.y > alturaMaxima) continue;
+                if (!hit.collider.CompareTag("Ground")) continue;
+
+                Vector3 spawnPos = hit.point + Vector3.up * 0.3f;
+
+                Collider[] colliders = Physics.OverlapSphere(spawnPos, 0.3f);
+                bool posicaoLivre = true;
+
+                foreach (Collider col in colliders)
+                {
+                    if (!col.CompareTag("Ground"))
+                    {
+                        posicaoLivre = false;
+                        break;
+                    }
+                }
+
+                if (posicaoLivre)
+                {
+                    GameObject prefab = trashPrefabs[Random.Range(0, trashPrefabs.Length)];
+                    Instantiate(prefab, spawnPos, Quaternion.identity);
+                    GameManager.instance.RegistrarLixo(); // registra o lixo
+                    spawnados++;
+                }
+            }
+        }
+
+        Debug.Log(area.nomeComodo + ": Spawnados " + spawnados + " de " + area.quantidade);
+    }
+
     void OnDrawGizmosSelected()
     {
+        if (areas == null) return;
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(areaCenter, areaSize);
+        foreach (SpawnArea area in areas)
+        {
+            Gizmos.DrawWireCube(area.center, area.size);
+        }
     }
 }

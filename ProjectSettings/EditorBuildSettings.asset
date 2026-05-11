@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fase_1.unity
     guid: 2a2ca0914c0f6ea4dafc5e0f7fb1c55e
+  - enabled: 1
+    path: Assets/Scenes/Passou.unity
+    guid: c25f757d885448541abe6630dc9f76e9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
