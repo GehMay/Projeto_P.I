@@ -7,8 +7,11 @@ public class PlayerController : MonoBehaviour
     public Transform cameraTransform;
 
     [Header("Rotação com o mouse")]
-    public float mouseSensitivity = 2f; // sensibilidade do mouse
+    public float mouseSensitivity = 2f;
     private float horizontalRotation = -90f;
+
+    [Header("Joystick Mobile")]
+    public Vector2 joystickInput;
 
     private Rigidbody rb;
     private bool isGrounded;
@@ -17,9 +20,9 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("PLAYERCONTROLLER START INICIOU!");
         rb = GetComponent<Rigidbody>();
-        QualitySettings.vSyncCount = 0; // desativa V Sync para permitir controle total do frame rate
+        QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
-        Cursor.lockState = CursorLockMode.Locked; // trava o cursor na tela
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
@@ -42,10 +45,17 @@ public class PlayerController : MonoBehaviour
 
     void Move()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x, z;
 
-        Vector3 camForward = transform.forward; // agora usa a frente do player
+#if UNITY_ANDROID || UNITY_IOS
+            x = joystickInput.x;
+            z = joystickInput.y;
+#else
+        x = Input.GetAxis("Horizontal");
+        z = Input.GetAxis("Vertical");
+#endif
+
+        Vector3 camForward = transform.forward;
         Vector3 camRight = transform.right;
 
         camForward.y = 0;
