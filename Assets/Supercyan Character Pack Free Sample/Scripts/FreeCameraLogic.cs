@@ -20,6 +20,16 @@ namespace Supercyan.FreeSample
         private float rotationX = 0f;
         private float rotationY = 0f;
 
+        public void NextTarget() { SwitchTarget(1); }
+        public void PreviousTarget() { SwitchTarget(-1); }
+
+        private int touchId = -1;
+        public RectTransform joystickArea;
+
+        public RectTransform cameraArea;
+
+        public Transform player;
+
         private void Start()
         {
             Cursor.visible = false;
@@ -40,12 +50,15 @@ namespace Supercyan.FreeSample
         {
             if (m_targets.Count == 0) return;
 
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivityX;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivityY;
-
-            rotationX += mouseX;
-            rotationY -= mouseY;
-            rotationY = Mathf.Clamp(rotationY, minY, maxY);
+#if UNITY_ANDROID || UNITY_IOS
+            HandleTouch();
+#else
+    float mouseX = Input.GetAxis("Mouse X") * mouseSensitivityX;
+    float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivityY;
+    rotationX += mouseX;
+    rotationY -= mouseY;
+    rotationY = Mathf.Clamp(rotationY, minY, maxY);
+#endif
         }
 
         private void LateUpdate()
@@ -54,9 +67,12 @@ namespace Supercyan.FreeSample
 
             // Posição fixa no alvo + offset de altura
             transform.position = m_currentTarget.position + positionOffset;
-
-            // Rotação livre pelo mouse
             transform.rotation = Quaternion.Euler(rotationY, rotationX, 0);
+
+#if UNITY_ANDROID || UNITY_IOS
+    if (player != null)
+        player.rotation = Quaternion.Euler(0f, rotationX, 0f);
+#endif
         }
 
         private void SwitchTarget(int step)
@@ -71,7 +87,33 @@ namespace Supercyan.FreeSample
             m_currentTarget = m_targets[m_currentIndex];
         }
 
-        public void NextTarget() { SwitchTarget(1); }
-        public void PreviousTarget() { SwitchTarget(-1); }
+
+        void HandleTouch()
+        {
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                Touch touch = Input.GetTouch(i);
+
+                // só aceita toques dentro da área da câmera
+                if (cameraArea != null &&
+                    !RectTransformUtility.RectangleContainsScreenPoint(cameraArea, touch.position, null))
+                    continue;
+
+                if (touch.phase == TouchPhase.Began && touchId == -1)
+                    touchId = touch.fingerId;
+
+                if (touch.fingerId != touchId) continue;
+
+                if (touch.phase == TouchPhase.Moved)
+                {
+                    rotationX += touch.deltaPosition.x * mouseSensitivityX * 0.1f;
+                    rotationY -= touch.deltaPosition.y * mouseSensitivityY * 0.1f;
+                    rotationY = Mathf.Clamp(rotationY, minY, maxY);
+                }
+
+                if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+                    touchId = -1;
+            }
+        }
     }
 }

@@ -33,7 +33,7 @@ public class TrashBin : MonoBehaviour
         }
     }
 
-    void TentarJogarLixo()
+    public void TentarJogarLixo()
     {
         Item item = Inventory.instance.GetSelectedItem();
 

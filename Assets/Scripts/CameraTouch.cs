@@ -28,23 +28,32 @@ public class CameraTouch : MonoBehaviour
 
     void HandleTouch()
     {
+        Debug.Log("Toques na tela: " + Input.touchCount);
+
         for (int i = 0; i < Input.touchCount; i++)
         {
             Touch touch = Input.GetTouch(i);
 
             if (joystickArea != null &&
                 RectTransformUtility.RectangleContainsScreenPoint(joystickArea, touch.position, null))
+            {
+                Debug.Log("Toque ignorado - está no joystick | fingerId: " + touch.fingerId);
                 continue;
+            }
+
+            Debug.Log("Toque fora do joystick | fingerId: " + touch.fingerId + " | touchId: " + touchId);
 
             if (touch.phase == TouchPhase.Began && touchId == -1)
             {
                 touchId = touch.fingerId;
+                Debug.Log("TouchId definido: " + touchId);
             }
 
             if (touch.fingerId != touchId) continue;
 
             if (touch.phase == TouchPhase.Moved)
             {
+                Debug.Log("Movendo câmera!");
                 float rotY = touch.deltaPosition.x * sensibilidadeX;
                 playerController.transform.Rotate(0f, rotY, 0f);
 

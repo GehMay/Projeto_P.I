@@ -33,9 +33,11 @@ public class PlayerController : MonoBehaviour
             Jump();
         }
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        horizontalRotation += mouseX;
-        transform.rotation = Quaternion.Euler(0f, horizontalRotation, 0f);
+#if !UNITY_ANDROID && !UNITY_IOS
+    float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+    horizontalRotation += mouseX;
+    transform.rotation = Quaternion.Euler(0f, horizontalRotation, 0f);
+#endif
     }
 
     void FixedUpdate()

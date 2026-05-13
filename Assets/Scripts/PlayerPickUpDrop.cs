@@ -21,7 +21,7 @@ public class PlayerPickUpDrop : MonoBehaviour
         // desenha o raio na cena para debug
         Debug.DrawRay(handPoint.position, Vector3.up * distanciaMaxima, Color.green);
 
-        // tecla E para pegar
+#if !UNITY_ANDROID && !UNITY_IOS
         if (Input.GetKeyDown(KeyCode.E))
         {
             TentarPegarItem();
@@ -32,6 +32,29 @@ public class PlayerPickUpDrop : MonoBehaviour
         {
             SoltarItem();
         }
+#endif
+    }
+
+    // chamado pelo botão na tela no celular
+    public void BotaoPegarPressionado()
+    {
+        TentarPegarItem();
+    }
+
+    // chamado pelo botão na tela no celular
+    public void BotaoJogarPressionado()
+    {
+        TrashBin[] lixeiras = FindObjectsOfType<TrashBin>();
+        foreach (TrashBin lixeira in lixeiras)
+        {
+            float distancia = Vector3.Distance(transform.position, lixeira.transform.position);
+            if (distancia < 3f)
+            {
+                lixeira.TentarJogarLixo();
+                return;
+            }
+        }
+        Debug.Log("Nenhuma lixeira próxima!");
     }
 
     void TentarPegarItem()
