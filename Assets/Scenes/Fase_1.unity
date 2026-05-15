@@ -1072,7 +1072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &173060001
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1770,7 +1770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &277686816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3593,7 +3593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &595893535
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4826,7 +4826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &915110458
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8088,7 +8088,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9071603335069500600, guid: 9cfdad322cf9eb74c96168a154bcb4e2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 277686816}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6967957345448730905, guid: 9cfdad322cf9eb74c96168a154bcb4e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1914059922}
   m_SourcePrefab: {fileID: 100100000, guid: 9cfdad322cf9eb74c96168a154bcb4e2, type: 3}
 --- !u!1001 &1415405672
 PrefabInstance:
@@ -10477,6 +10480,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f44d931be73253742af7f6eaeeabcd28, type: 3}
+--- !u!1 &1914059918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6967957345448730905, guid: 9cfdad322cf9eb74c96168a154bcb4e2, type: 3}
+  m_PrefabInstance: {fileID: 1412970176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1914059922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914059918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d94666722ea534093b4e7e691c450b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MobileUI
+  botaoPegar: {fileID: 173060000}
+  botaoJogar: {fileID: 277686815}
 --- !u!1001 &1914377531
 PrefabInstance:
   m_ObjectHideFlags: 0

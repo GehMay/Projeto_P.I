@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Passou.unity
     guid: c25f757d885448541abe6630dc9f76e9
+  - enabled: 1
+    path: Assets/Scenes/Final_Ruim.unity
+    guid: 15cf2cebc5492394a9c4c4e65f7708ad
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
