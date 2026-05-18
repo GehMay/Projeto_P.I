@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class TrashBin : MonoBehaviour
 {
+
+    [Header("Narração")]
+    public NarrationData narracaoCorreta;
+
     [Header("Tipo aceito pela lixeira")]
     public string acceptedType;
 
@@ -49,6 +53,8 @@ public class TrashBin : MonoBehaviour
             int quantidade = item.amount;
             Inventory.instance.RemoveSelectedItem();
             GameManager.instance.LixoDescartado(quantidade);
+
+            NarrationManager.Instance.Play(narracaoCorreta);
         }
         else
         {

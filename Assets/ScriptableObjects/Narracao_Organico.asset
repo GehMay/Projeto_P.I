@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3db1079b5d6964eafb862d3d55eaa0, type: 3}
+  m_Name: Narracao_Organico
+  m_EditorClassIdentifier: Assembly-CSharp::NarrationData
+  text: "Voc\xEA descarta o res\xEDduo org\xE2nico na coletora correta. A natureza
+    agradece cada escolha consciente."
+  audioClip: {fileID: 8300000, guid: fa7b0abb679cb7448a5b3db45cdd0d98, type: 3}
+  displayDuration: 4.5
