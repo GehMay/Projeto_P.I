@@ -1,108 +1,124 @@
-# Projeto do 1° Semestre de Ciência da Computação
-# FECAP - Fundação de Comércio Álvares Penteado
+# Cidade Limpa
 
 <p align="center">
-<a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" width="280" />
 </p>
-
-# Cidade Limpa 
-
-## Cidade Limpa
-
-## Integrantes: <a href="https://www.linkedin.com/in/alanas-rocha/">Alana Silva Rocha</a>, <a href="https://github.com/BrunaClara">Bruna Clara da Silva Morais</a>, <a href="https://github.com/GehMay">Geovanna Vitoria Mayumi Reis Tamagusko</a>, <a href= "https://github.com/juliaandmed/Julia">Julia de Andrade Medeiros</a>
-
-## Professores Orientadores: 
-<br><a href="https://www.linkedin.com/in/adriano-valente-534576135/" target="_blank" rel="noopener noreferrer"> Adriano Felix Valente </a>
-<br><a href="https://www.linkedin.com/in/eduardo-savino-gomes-77833a10/" target="_blank" rel="noopener noreferrer"> Eduardo Savino Gomes </a>
-<br><a href="https://www.linkedin.com/in/luisspires/" target="_blank" rel="noopener noreferrer"> Luiz Fernando dos Santos Pires </a>
-<br><a href="https://www.linkedin.com/in/remuniz/" target="_blank" rel="noopener noreferrer"> Renata Muniz do Nascimento </a>
-<br><a href="https://www.linkedin.com/in/victorbarq/" target="_blank" rel="noopener noreferrer"> Victor Bruno Alexander Rosetti de Quiroz </a>
-
-
-## Descrição
 
 <p align="center">
-<img src="https://github.com/2026-1-MCC1/Projeto5/blob/main/imagens/jogo.jpg" alt="Cidade Limpa" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Alana Silva Rocha, Bruna Clara da Silva Morais, Geovanna Vitoria Mayumi Reis Tamagusko, Julia de Andrade Medeiros</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
+  <img alt="Unity" src="https://img.shields.io/badge/Unity-2022.3%20LTS-000000?style=for-the-badge&logo=unity" />
+  <img alt="C#" src="https://img.shields.io/badge/C%23-9B4DFF?style=for-the-badge&logo=csharp" />
+  <img alt="Projeto acadêmico" src="https://img.shields.io/badge/Projeto-Acad%C3%AAmico-0E7C86?style=for-the-badge" />
 </p>
 
-
-<p>O projeto consiste no desenvolvimento de um jogo digital eco friendly em primeira pessoa, com foco no gênero puzzle narrativo. A proposta une conscientização ambiental e suspense em uma experiência interativa, na qual o descarte correto de resíduos se torna parte essencial da narrativa. Por meio de mecânicas de coleta, identificação e separação de resíduos, o jogador é incentivado a refletir sobre práticas sustentáveis de forma dinâmica e imersiva.</p>
-</br> 
-<p>
-  Diferente de jogos educativos tradicionais, cada escolha do jogador impacta diretamente a história: acertos revelam fragmentos das memórias de uma cidade abandonada, enquanto erros fazem essas lembranças desaparecerem para sempre. Desenvolvido em Unity com linguagem C#, o projeto faz parte de um bootcamp acadêmico e busca entregar uma solução criativa, funcional e alinhada às demandas atuais de conscientização ambiental, utilizando a narrativa como principal ferramenta de engajamento.
+<p align="center">
+  <strong>Projeto do 1º Semestre de Ciência da Computação</strong><br>
+  <strong>FECAP - Fundação de Comércio Álvares Penteado</strong>
 </p>
 
+## 🎮 Sobre o projeto
 
-## 🛠 Estrutura de pastas
+Cidade Limpa é um jogo digital em primeira pessoa, com foco em narrativa e puzzle, criado para despertar consciência ambiental por meio de uma experiência imersiva e envolvente. O jogador explora uma cidade abandonada e precisa identificar, coletar e separar corretamente os resíduos para restaurar memórias e revelar a história do local.
 
--Raiz<br>
-|<br>
-|-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|Documentação.docx<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
-|-->imagens<br>
-|-->src<br>
-  &emsp;|-->Backend<br>
-  &emsp;|-->Frontend<br>
-|readme.md<br>
+A proposta combina:
 
-A pasta raiz contem dois arquivos que devem ser alterados:
+- conscientização ambiental;
+- mecânicas de coleta e separação de resíduos;
+- narrativa interativa e suspense;
+- impacto direto das escolhas do jogador na trama;
+- desenvolvimento em Unity com linguagem C#.
 
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
+## 🧠 Visão geral da mecânica
 
-Há também 4 pastas que seguem da seguinte forma:
+Diferente de jogos educativos tradicionais, cada decisão influencia diretamente o rumo da história. Acertos revelam fragmentos de memórias da cidade, enquanto erros fazem esses registros desaparecerem. Assim, o jogo transforma o descarte correto em parte essencial da narrativa, conectando educação ambiental e experiência emocional.
 
-<b>documentos</b>: Toda a documentação estará nesta pasta.
+## 👥 Integrantes
 
-<b>executáveis</b>: Binários e executáveis do projeto devem estar nesta pasta.
+- [Alana Silva Rocha](https://www.linkedin.com/in/alanas-rocha/)
+- [Bruna Clara da Silva Morais](https://github.com/BrunaClara)
+- [Geovanna Vitória Mayumi Reis Tamagusko](https://github.com/GehMay)
+- [Julia de Andrade Medeiros](https://github.com/juliaandmed/Julia)
 
-<b>imagens</b>: Imagens do sistema
+## 👩‍🏫 Professores orientadores
 
-<b>src</b>: Pasta que contém o código fonte.
+- [Adriano Felix Valente](https://www.linkedin.com/in/adriano-valente-534576135/)
+- [Eduardo Savino Gomes](https://www.linkedin.com/in/eduardo-savino-gomes-77833a10/)
+- [Luiz Fernando dos Santos Pires](https://www.linkedin.com/in/luisspires/)
+- [Renata Muniz do Nascimento](https://www.linkedin.com/in/remuniz/)
+- [Victor Bruno Alexander Rosetti de Quiroz](https://www.linkedin.com/in/victorbarq/)
 
-## 🛠 Instalação
+## 🖼️ Captura do jogo
 
-<b>Windows:</b>
+<p align="center">
+  <img src="https://github.com/2026-1-MCC1/Projeto5/blob/main/imagens/jogo.jpg" alt="Cidade Limpa" width="900" />
+</p>
 
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
+## 📁 Estrutura do projeto
 
-```sh
-Coloque código do prompt de comnando se for necessário
+```text
+Cidade_Limpa/
+├── Assets/
+├── Packages/
+├── ProjectSettings/
+├── documentos/
+│   └── antigos/
+├── executáveis/
+│   ├── windows/
+│   ├── android/
+│   └── HTML/
+├── imagens/
+├── src/
+│   ├── Backend/
+│   └── Frontend/
+├── .gitignore
+├── .vsconfig
+├── LICENSE
+├── Projeto_P.I.slnx
+├── README.md
+└── .gitattributes
 ```
 
-<b>HTML:</b>
+## ▶️ Como executar
 
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
+### Windows
 
-## 💻 Configuração para Desenvolvimento
+1. Acesse a pasta `executáveis`.
+2. Procure o arquivo `.exe` do jogo.
+3. Execute normalmente como qualquer outro programa Windows.
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+### Web/HTML
 
-Para abrir este projeto você necessita das seguintes ferramentas:
+1. Abra a pasta `executáveis/HTML`.
+2. Execute o arquivo `index.html` em um navegador.
 
--<a href="https://godotengine.org/download">GODOT</a>
+## 🛠️ Configuração para desenvolvimento
 
-```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
-```
+Para abrir e editar o projeto, você precisará do Unity Hub e de uma versão do Unity compatível com o projeto (recomenda-se a versão LTS mais recente suportada).
 
-## 📋 Licença/License
-<a href="https://github.com/2026-1-MCC1/Projeto5.git">Cidade Limpa</a> © 2026 by <a href="https://github.com/alanasrocha08">Alana Silva Rocha</a>, <a href="https://github.com/clbruna">Bruna Clara da Silva Morais</a>, <a href="https://github.com/GehMay">Geovanna Vitoria Mayumi Reis Tamagusko</a>, <a href="https://github.com/juliaandmed">Júlia de Andrade Medeiros</a><a><a href= "https://www.fecap.br/">FECAP></a> is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+### Passos
 
-## 🎓 Referências
+1. Instale o [Unity Hub](https://unity.com/download).
+2. Instale uma versão do Unity (preferencialmente LTS).
+3. Abra a pasta do projeto no Unity Hub.
+4. Caso necessário, faça o download das dependências do Projeto via Package Manager.
+5. Pressione o botão Play para testar o jogo.
 
-Aqui estão as referências usadas no projeto.
+## 📜 Licença
 
-1. Unity Technologies. Unity Manual. San Francisco, 2026. Disponível em: https://docs.unity3d.com/Manual/index.html.
-2. Microsoft. C# documentation. Redmond, 2026. Disponível em: https://learn.microsoft.com/dotnet/csharp.
-3. OpenGameArt. OpenGameArt.org: free game assets. 2026. Disponível em: https://opengameart.org.
-4. Unity Technologies. Unity Asset Store. San Francisco, 2026. Disponível em: https://assetstore.unity.com.
+Este projeto está licenciado sob a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+- [Cidade Limpa](https://github.com/2026-1-MCC1/Projeto5.git)
+- © 2026 por [Alana Silva Rocha](https://github.com/alanasrocha08), [Bruna Clara da Silva Morais](https://github.com/clbruna), [Geovanna Vitória Mayumi Reis Tamagusko](https://github.com/GehMay) e [Júlia de Andrade Medeiros](https://github.com/juliaandmed)
+
+## 📚 Referências
+
+1. Unity Technologies. Unity Manual. Disponível em: https://docs.unity3d.com/Manual/index.html
+2. Microsoft. C# Documentation. Disponível em: https://learn.microsoft.com/dotnet/csharp
+3. OpenGameArt. Disponível em: https://opengameart.org
+4. Unity Asset Store. Disponível em: https://assetstore.unity.com
+
+---
+
+<p align="center">
+  <em>Feito com ❤️ para promover consciência ambiental por meio de jogos.</em>
+</p>
+
